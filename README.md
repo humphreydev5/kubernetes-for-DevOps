@@ -6,9 +6,9 @@
 
 2. EC2 Instance:
 
-OS: Ubuntu 20.04/22.04 (t2.micro for testing, but t3.small recommended for stability).
+-- OS: Ubuntu 20.04/22.04 (t2.micro for testing, but t3.small recommended for stability).
 
-IAM Role: Attach AmazonEC2FullAccess, AmazonS3FullAccess, IAMFullAccess, and AmazonVPCFullAccess.
+-- IAM Role: Attach AmazonEC2FullAccess, AmazonS3FullAccess, IAMFullAccess, and AmazonVPCFullAccess.
 
 1. Install Dependencies
 
