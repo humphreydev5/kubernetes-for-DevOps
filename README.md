@@ -13,35 +13,64 @@
 
 ### 1. Install Dependencies
 
- Install Python, AWS CLI, kubectl, and KOPS
+ Install Python, kubectl, AWS CLI, and KOPS
 ```
 sudo apt-get update  
 sudo apt-get install -y python3-pip apt-transport-https
 ```
 
-# Add Kubernetes repo and install kubectl
-echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list  
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -  
-sudo apt-get update && sudo apt-get install -y kubectl  
+Add Kubernetes repo and install kubectl
 
-# Install AWS CLI
-pip3 install awscli --upgrade  
-echo 'export PATH="$PATH:/home/ubuntu/.local/bin/"' >> ~/.bashrc  
-source ~/.bashrc  
-2. Install KOPS
-bash
-Copy
-# Download the latest KOPS binary
-curl -LO https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64  
+```
+echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+```
+``` 
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+```
+```
+sudo apt-get update && sudo apt-get install -y kubectl
+```
 
-# Make it executable and move to PATH
-chmod +x kops-linux-amd64  
-sudo mv kops-linux-amd64 /usr/local/bin/kops  
-3. Configure AWS CLI
-bash
-Copy
-aws configure  
-# Follow prompts to enter AWS Access Key, Secret Key, Region (e.g., us-east-1), and output format (json)  
+Install AWS CLI
+```
+pip3 install awscli --upgrade
+```
+```
+echo 'export PATH="$PATH:/home/ubuntu/.local/bin/"' >> ~/.bashrc
+```
+```
+source ~/.bashrc
+```
+Try this if pip is working on your ubuntu
+> This works fine for me
+```
+sudo snap install aws-cli --classic
+```
+```
+aws --version
+```
+
+### 2. Install KOPS
+Download the latest KOPS binary
+```
+curl -LO https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
+```
+
+Make it executable and move to PATH
+```
+chmod +x kops-linux-amd64
+```
+```
+sudo mv kops-linux-amd64 /usr/local/bin/kops
+```
+
+### 3. Configure AWS CLI
+```
+aws configure
+```
+> Follow prompts to enter AWS Access Key, Secret Key, Region (e.g., us-east-1), and output format (json)
+
+
 4. Create S3 Bucket for KOPS State
 bash
 Copy
