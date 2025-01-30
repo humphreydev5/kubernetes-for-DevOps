@@ -10,11 +10,14 @@
 
  - IAM Role: Attach AmazonEC2FullAccess, AmazonS3FullAccess, IAMFullAccess, and AmazonVPCFullAccess.
 
-1. Install Dependencies
+
+### 1. Install Dependencies
 
  Install Python, AWS CLI, kubectl, and KOPS
+```
 sudo apt-get update  
-sudo apt-get install -y python3-pip apt-transport-https  
+sudo apt-get install -y python3-pip apt-transport-https
+```
 
 # Add Kubernetes repo and install kubectl
 echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list  
