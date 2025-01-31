@@ -96,7 +96,7 @@ kops update cluster demok8scluster.k8s.local --yes --state=s3://kops-humphrey-st
 kops validate cluster demok8scluster.k8s.local --state=s3://kops-humphrey-storage
 ```  
 
-# Check nodes
+### Check nodes
 kubectl get nodes  
 
 
@@ -105,7 +105,7 @@ kubectl get nodes
 ```
 kops delete cluster demok8scluster.k8s.local --state=s3://kops-humphrey-storage --yes  
 ```
-# Delete S3 bucket
+### Delete S3 bucket
 ```
 aws s3 rb s3://kops-humphrey-storage --force
 ```
