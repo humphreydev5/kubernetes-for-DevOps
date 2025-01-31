@@ -8,9 +8,9 @@
 
 2. EC2 Instance:
 
- - OS: Ubuntu 20.04/22.04 (t2.micro for testing, but t3.small recommended for stability).
+  - OS: Ubuntu 20.04/22.04 (t2.micro for testing, but t3.small recommended for stability).
 
- - IAM Role: Attach AmazonEC2FullAccess, AmazonS3FullAccess, IAMFullAccess, and AmazonVPCFullAccess.
+  - IAM Role: Attach AmazonEC2FullAccess, AmazonS3FullAccess, IAMFullAccess, and AmazonVPCFullAccess.
 
 
 ### 1. Install Dependencies
@@ -112,38 +112,38 @@ aws s3 rb s3://kops-humphrey-storage --force
 Troubleshooting Tips
 1. Cluster Fails to Validate:
 
-  - Check IAM permissions.
+   - Check IAM permissions.
 
- - Ensure the S3 bucket exists and is accessible.
+   - Ensure the S3 bucket exists and is accessible.
 
 2. Nodes Not Ready:
 
- - Verify EC2 instances are running.
+  - Verify EC2 instances are running.
 
-- Check security groups for proper inbound/outbound rules.
+  - Check security groups for proper inbound/outbound rules.
 
 3. KOPS Command Errors:
 
- - Ensure kops and kubectl versions are compatible.
+  - Ensure kops and kubectl versions are compatible.
 
 ### Cost Optimization
-- Use Spot Instances: Add --node-spot-price and --master-spot-price to kops create cluster.
+ - Use Spot Instances: Add --node-spot-price and --master-spot-price to kops create cluster.
 
-- Terminate Clusters when not in use.
+ - Terminate Clusters when not in use.
 
-- Avoid t2.micro for Production: Use t3.small or larger for reliability.
+ - Avoid t2.micro for Production: Use t3.small or larger for reliability.
 
 ### Why This Setup?
-- KOPS: Simplifies Kubernetes cluster lifecycle management on AWS.
+ - KOPS: Simplifies Kubernetes cluster lifecycle management on AWS.
 
-- S3 Bucket: Stores cluster state for recovery and updates.
+ - S3 Bucket: Stores cluster state for recovery and updates.
 
-- t2.micro: Fits AWS Free Tier (but not recommended for production).
+ - t2.micro: Fits AWS Free Tier (but not recommended for production).
 
 ### Next Steps:
 
-- Deploy a sample app: kubectl create deployment nginx --image=nginx
+ - Deploy a sample app: kubectl create deployment nginx --image=nginx
 
-- Explore KOPS Documentation for advanced configurations.
+ - Explore KOPS Documentation for advanced configurations.
 
 > By following this guide, you’ve set up a cost-effective Kubernetes cluster on AWS – ideal for learning and experimentation! 🚀
