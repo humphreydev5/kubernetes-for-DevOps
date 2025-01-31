@@ -1,6 +1,7 @@
 # Step-by-Step Guide: Installing Kubernetes on AWS EC2 Using KOPS
 > Perfect for Beginners – Includes Cost-Saving Tips!
-![0_NfLlEHCAdULSQVCN](https://github.com/user-attachments/assets/4ccf96f6-a5df-48d0-80cf-4ffad40a8070)
+
+![0_hm_JEBoRjDnfzzHe](https://github.com/user-attachments/assets/6ae95200-aca0-4d9f-969b-84eaee7eb316)
 
 ## Prerequisites
 1. AWS Account: With permissions to create EC2, S3, IAM, and VPC resources.
