@@ -73,24 +73,13 @@ aws configure
 
 ### 4. Create S3 Bucket for KOPS State
 ```
-aws s3api create-bucket \
-  --bucket kops-humphrey-storage \
-  --region us-east-1 \
-  --create-bucket-configuration LocationConstraint=us-east-1
+aws s3api create-bucket --bucket kops-humphrey-storage --region us-east-1 --create-bucket-configuration LocationConstraint=us-east-1
 ```
 
 ### 5. Create the Kubernetes Cluster
 > Generate cluster configuration
 ```
-kops create cluster \
-  --name=demok8scluster.k8s.local \
-  --state=s3://kops-humphrey-storage \
-  --zones=us-east-1a \
-  --node-count=1 \
-  --node-size=t2.micro \
-  --master-size=t2.micro \
-  --master-volume-size=8 \
-  --node-volume-size=8
+kops create cluster --name=demok8scluster.k8s.local --state=s3://kops-humphrey-storage -zones=us-east-1a --node-count=1 --node-size=t2.micro --master-size=t2.micro --master-volume-size=8 --node-volume-size=8
 ```
 
 > Edit cluster config (optional, to tweak settings)
