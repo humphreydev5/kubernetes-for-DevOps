@@ -101,9 +101,7 @@ kubectl get nodes
 ### 7. Cleanup (Avoid Unnecessary Costs!)
 
 ```
-kops delete cluster demok8scluster.k8s.local \
-  --state=s3://kops-humphrey-storage \
-  --yes  
+kops delete cluster demok8scluster.k8s.local --state=s3://kops-humphrey-storage --yes  
 ```
 # Delete S3 bucket
 ```
