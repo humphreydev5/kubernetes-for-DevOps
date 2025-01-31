@@ -41,7 +41,7 @@ echo 'export PATH="$PATH:/home/ubuntu/.local/bin/"' >> ~/.bashrc
 ```
 source ~/.bashrc
 ```
-Try this if pip is working on your ubuntu
+Try this if you encounter an error using pip
 > This works fine for me
 ```
 sudo snap install aws-cli --classic
