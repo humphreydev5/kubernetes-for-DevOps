@@ -118,13 +118,13 @@ Troubleshooting Tips
 
 2. Nodes Not Ready:
 
-  - Verify EC2 instances are running.
+   - Verify EC2 instances are running.
 
-  - Check security groups for proper inbound/outbound rules.
+   - Check security groups for proper inbound/outbound rules.
 
 3. KOPS Command Errors:
 
-  - Ensure kops and kubectl versions are compatible.
+   - Ensure kops and kubectl versions are compatible.
 
 ### Cost Optimization
  - Use Spot Instances: Add --node-spot-price and --master-spot-price to kops create cluster.
